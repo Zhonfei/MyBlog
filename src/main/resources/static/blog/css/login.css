@@ -1,0 +1,22 @@
+body{
+	background-image: url(../image/bklogin.jpg);
+}
+form{
+	text-align: center;
+	/*background-color: cornflowerblue;*/
+	/*border: 1px yellow solid;*/
+	margin-top: 5%;
+}
+form .alignr{
+	text-align: right;
+}
+
+form .alignc{
+	text-align: center;
+}
+
+form table{
+	/*border: 1px red solid;*/
+	width: 80%;
+	margin-left: 10%;
+}

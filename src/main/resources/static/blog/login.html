@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/foundation/5.5.3/css/foundation.min.css">
+    <link rel="stylesheet" href="https://static.runoob.com/assets/foundation-icons/foundation-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript"  src="https://cdn.staticfile.org/foundation/5.5.3/js/foundation.min.js"></script>
+    <script type="text/javascript"  src="https://cdn.staticfile.org/foundation/5.5.3/js/vendor/modernizr.js"></script>
+</head>
+<body>
+	<form action="/login" method="post" >
+		<table>
+			<thead >
+				<tr>
+					<td colspan="2"><label class="text-center">系统登录</label></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr >
+					<td><label for="username" class="right fi-torsos"></label></td>
+					<td><input type="text" class="large-10 medium-7 columns" placeholder="请输入用户名" id="username" name="username"></td>
+				</tr>
+				<tr>
+					<td><label for="password" class="right fi-key"></label></td>
+					<td><input type="password" class="large-10 medium-7 columns"  placeholder="请输入密码" id="password" name="password"></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button type="submit" class="button radius right large-12">登录</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>

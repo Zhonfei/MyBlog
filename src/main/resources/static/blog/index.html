@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>首页</title>
+  <meta charset="utf-8">
+  <link rel="icon" href="image/favicon.ico" >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/foundation/5.5.3/css/foundation.min.css">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/foundation/5.5.3/js/foundation.min.js"></script>
+  <script src="https://cdn.staticfile.org/foundation/5.5.3/js/vendor/modernizr.js"></script>
+  <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+  <script src="https://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+	<script src="https://cdn.highcharts.com.cn/highcharts/highcharts-3d.js"></script>
+  <script src="https://cdn.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+  <!--<script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>-->
+  <script src="https://cdn.highcharts.com.cn/highcharts/themes/dark-unica.js"></script>
+  <script type="text/javascript" src="js/Tools.js" ></script>
+	<link rel="stylesheet" href="css/home.css" />
+  <script type="text/javascript" src="js/index.js" ></script>
+  <link rel="stylesheet" href="css/index.css" />
+  <script type="text/javascript" src="js/authority.js"></script>
+  
+</head>
+<body>
+<div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
+
+      <section class="middle tab-bar-section">
+        <h1 class="title" >我的博客</h1>
+      </section>
+      <section class="right tab-bar-section">
+        <h1 class="title">
+        	<img src="image/headIMG.jpg" width="35px" height="35px"/>
+        	<select name="" id="roleSel">
+        		<option value="1">chaoji</option>
+        	</select>
+        </h1>
+      </section>
+    </nav>
+
+    <aside class="left-off-canvas-menu">
+      <ul id="mainmenu" class="tabs off-canvas-list" data-tab>
+        <li><label>Heading</label></li>
+        <li><a href="#home"><img src="image/favicon.ico" width="15%" height="15%">首页</a></li>
+        <li><a href="#menu1"><img src="image/favicon.ico" width="15%" height="15%">menu1</a></li>
+        <!--<li><a href="#">Link3</a></li>
+        <li><a href="#">Link4</a></li>
+        <li><a href="#">Link5</a></li>
+        <li><a href="#">Link 6</a></li>
+        <li><a href="#">Link 7</a></li>
+        <li><a href="#">Link 8</a></li>-->
+      </ul>
+    </aside>
+    
+    <!--<section class="main-section">
+      <h3>菜鸟教程</h3>
+      <p>学的不仅是技术，更是梦想！！！</p>
+    </section>
+    
+    <section id="link2">
+      <h3>菜鸟教程link2</h3>
+      <p>学的不仅是技术，更是梦想！！！</p>
+    </section>-->
+    <div id="mainmenutabs" class="tabs-content">
+		  <div class="content active" id="home"></div>
+		  <div class="content" id="menu1"></div>
+		  <div class="content" id="menu2"></div>
+		  <div class="content" id="menu3"></div>
+		</div>
+
+    <a class="exit-off-canvas"></a>
+
+  </div>
+</div>
+
+<!-- 初始化 Foundation JS -->
+<script>
+$(document).ready(function() {
+    $(document).foundation();
+	});
+</script>
+<script type="text/javascript" src="js/home.js" ></script>
+</body>
+</html>

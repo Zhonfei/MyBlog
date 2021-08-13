@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3>当前位置:菜单管理</h3>
+		<ul id="menutabs" class="tabs" data-tab >
+		  <li class="tab-title active"><a href="#menulist">列表展示</a></li>
+		  <li class="tab-title"><a href="#menuUpload">上传</a></li>
+		</ul>
+		<div class="tabs-content">
+		  <div class="content active" id="menulist">
+		    <div class="responsive">
+				<table>
+				  <thead>
+				    <tr>
+				      <th>菜单编号</th>
+				      <th>菜单图标</th>
+				      <th>菜单名称</th>
+				      <th>菜单路径</th>
+				      <th>操作</th>
+				    </tr>
+				  </thead>
+				  <tbody id="menuinfo">
+				    <tr>
+				      <td>John</td>
+				      <td>Doe</td>
+				      <td>john@example.com</td>
+				      <td>New York</td>
+				      <td>35</td>
+				    </tr>
+				  </tbody>
+				</table>
+				</div>
+		  </div>
+		  <div class="content" id="menuUpload">
+		    <h3>新增菜单</h3>
+		    <div class="responsive">
+		    	<form name="addNewMenuInfo" id="addNewMenuInfo" enctype="multipart/form-data">
+		    		<table>
+		    			<tr>
+		    				<td>
+		    					<div class="row">
+								    <div class="small-8">
+								      <div class="row">
+								        <div class="small-3 columns">
+								          <label for="addMenuCode" class="inline right">编号</label>
+								        </div>
+								        <div class="small-9 columns">
+								          <input type="text" id="addMenuCode" disabled="disabled">
+								        </div>
+								      </div>
+								    </div>
+								</div>
+		    				</td>
+		    				<td>
+		    					<div class="row">
+								    <div class="small-8">
+								      <div class="row">
+								        <div class="small-3 columns">
+								          <label for="addMenuPCode" class="inline right">父编号</label>
+								        </div>
+								        <div class="small-9 columns">
+								          <input type="text" id="addMenuPCode" disabled="disabled" value="102">
+								        </div>
+								      </div>
+								    </div>
+								</div>
+		    				</td>
+		    			</tr>
+		    			<tr>
+		    				<td>
+		    					<div class="row">
+								    <div class="small-8">
+								      <div class="row">
+								        <div class="small-3 columns">
+								          <label for="addMenuName" class="inline right">中文名称</label>
+								        </div>
+								        <div class="small-9 columns">
+								          <input type="text" id="addMenuName">
+								        </div>
+								      </div>
+								    </div>
+								</div>
+		    				</td>
+		    				<td>
+		    					<div class="row">
+								    <div class="small-8">
+								      <div class="row">
+								        <div class="small-3 columns">
+								          <label for="addMenuUrl" class="inline right">英文名称</label>
+								        </div>
+								        <div class="small-9 columns">
+								          <input type="text" id="addMenuUrl">
+								        </div>
+								      </div>
+								    </div>
+								</div>
+		    				</td>
+		    			</tr>
+		    			<tr>
+		    				<td colspan="2">
+		    					<div class="row">
+								    <div class="small-8">
+								      <div class="row">
+								        <div class="small-3 columns">
+								          <label for="addMenuRole" class="inline right">应用角色</label>
+								        </div>
+								        <div class="small-9 columns">
+								           <span id="addMenuRole" value="">
+								           		<input type="checkbox" name="usr" value="100003,"/>普通用户
+								           		<input type="checkbox" name="admin" value="100002,"/>普通管理员
+								           		<input type="checkbox" name="sadmin" value="100001,"/>超级管理员
+								           </span>
+								        </div>
+								      </div>
+								    </div>
+								</div>
+		    				</td>
+		    			</tr>
+		    			<tr>
+		    				<td colspan="2">
+		    					<div class="row">
+								    <div class="small-8">
+								      <div class="row">
+								        <div class="small-3 columns">
+								          <label for="addMenuIco" class="inline right">图标上传</label>
+								        </div>
+								        <div class="small-9 columns">
+								          <input type="file" name="uploadNewMenuFile" id="addMenuIco">
+								        </div>
+								      </div>
+								    </div>
+								</div>
+		    				</td>
+		    			</tr>
+		    			<tr>
+		    				<td colspan="2">
+		    					<button type="button" class="button" onclick="addNewMenu()">提交</button>
+		    				</td>
+		    			</tr>
+		    		</table>
+		    	</form>
+		    </div>
+		  </div>
+		</div>
+		<!-- The Modal Content -->
+		<div id="editMenuModel" class="reveal-modal tiny" data-reveal>
+		  <h3>编辑菜单信息</h3>
+		   <form>
+		   	  <span id="editMenuId" style="display: none;"></span>
+			  <div class="row">
+			    <div class="small-8">
+			      <div class="row">
+			        <div class="small-3 columns">
+			          <label for="editMenuCode" class="inline right">菜单编号</label>
+			        </div>
+			        <div class="small-9 columns">
+			          <input type="text" id="editMenuCode" disabled="disabled">
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="row">
+			    <div class="small-8">
+			      <div class="row">
+			        <div class="small-3 columns">
+			          <label for="editMenuName" class="inline right">菜单名称</label>
+			        </div>
+			        <div class="small-9 columns">
+			          <input type="text" id="editMenuName">
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="row">
+			    <div class="small-8">
+			      <div class="row">
+			        <div class="small-3 columns">
+			          <label for="editMenuUrl" class="inline right">菜单路径</label>
+			        </div>
+			        <div class="small-9 columns">
+			          <input type="text" id="editMenuUrl">
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="row">
+			    <div class="small-8">
+			      <div class="row">
+			        <div class="small-3 columns">
+			          <label for="editIcoUrl" class="inline right">图标路径</label>
+			        </div>
+			        <div class="small-9 columns">
+			          <input type="text" id="editIcoUrl" disabled="disabled">
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			  <button type="button" onclick="updateMenuInfo(1)" class="button tiny radius">修改</button>
+			  <button type="button" onclick="updateMenuInfo(2)" class="button tiny radius">删除</button>
+			</form>
+		  <a class="close-reveal-modal">&times;</a>
+		</div>
+		<script>
+			var roleArr = [];
+			$("#addMenuRole input").click(function(){
+				if(roleArr.indexOf(this.value)!=-1){
+					roleArr[roleArr.indexOf(this.value)]="";
+				}else{
+					roleArr.push(this.value);
+				}
+				console.log(roleArr);
+			});
+			$(document).ready(function() {
+			    $(document).foundation();
+			});
+			
+			function addNewMenu(){
+				var rolesFlag = "";
+				for(var i=0;i<roleArr.length;i++){
+					rolesFlag += roleArr[i];
+				}
+				rolesFlag = rolesFlag.substring(0,rolesFlag.length-1);
+				var form = new FormData(document.getElementById("addNewMenuInfo"));
+	            form.append("menuIco", $("#addMenuIco").val());
+	            form.append("menuCode", $("#addMenuCode").val());
+	            form.append("menuPcode", $("#addMenuPCode").val());
+	            form.append("menuName", $("#addMenuName").val());
+	            form.append("menuUrl", $("#addMenuUrl").val());
+	            form.append("rolesFlag", rolesFlag);
+	            //alert(rolesFlag);
+				$.ajax({
+	                type: 'POST',
+	                url: '/blog/admin/addNewMenu',
+	                data: form,
+	                processData: false,
+	                contentType: false,
+	                success: function (res) {
+	                    if(flag>0){
+	                    	jumpToPage(window.location.href+"#menulist");
+	                    }else{
+	                    	alert("error!");
+	                    }
+	                }
+	           });
+			}
+			
+			function updateMenuInfo(flag){
+				$.ajax({
+					type:"post",
+					url:"/blog/admin/updateMenuInfo",
+					async:true,
+					data:{
+						id:$("#editMenuId").html(),
+						menuCode:$("#editMenuCode").val(),
+						menuName:$("#editMenuName").val(),
+						menuUrl:$("#editMenuUrl").val(),
+						menuIco:$("#editIcoUrl").val(),
+						menuStatus:'1',
+						emkey:getEmKey(),
+						flag:flag
+					},
+					success:function(){}
+				});
+			}
+			
+			function editMenuInfo(id){
+				$.ajax({
+					type:"get",
+					url:"/blog/admin/getMenuById?id="+id,
+					async:true,
+					success:function(data){
+						if(data){
+							$(data).each(function(){
+								$("#editMenuId").html(this.id);
+								$("#editMenuCode").val(this.menuCode);
+								$("#editMenuName").val(this.menuName);
+								$("#editMenuUrl").val(this.menuUrl);
+								$("#editIcoUrl").val(this.menuIco);
+							});
+						}
+					}
+				});
+			}
+			function loadMenu(){
+				$.ajax({
+					type:"get",
+					url:"/blog/admin/getMenuAll",
+					async:false,
+					success:function(data){
+						if(data){
+							$("#menuinfo").html('');
+							$(data).each(function(){
+								$("#addMenuCode").val(parseInt(this.menuCode)+1);
+								$("#menuinfo").append('<tr><td>'+this.menuCode+'</td><td><img src="'+this.menuIco+'" width="17px" height="17px"/></td>'+
+				      '<td>'+this.menuName+'</td><td>'+this.menuUrl+'</td>'+
+				      '<td><button type="button" onclick="editMenuInfo('+this.id+')" class="button tiny radius" data-reveal-id="editMenuModel">编辑</button></td></tr>');
+							});
+						}
+					}
+				});
+				$("#menutabs li").click(function(){
+					loadMenu();
+				});
+			}
+		</script>
+	</body>
+</html>
